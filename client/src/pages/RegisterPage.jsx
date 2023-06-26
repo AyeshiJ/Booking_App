@@ -6,7 +6,7 @@ export default function RegisterPage() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  function RegisterPage(ev) {
+  function registerUser(ev) {
     ev.preventDefault();
     axios.get("http://localhost:4000/test");
   }
