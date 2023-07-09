@@ -14,10 +14,11 @@ export function UserContextProvider({children}) {
     //   }
     // }, []);
     return (
-    //   <UserContext.Provider value={{user,setUser,ready}}>
-    <div> 
+    // <UserContext.Provider value={{user,setUser,ready}}>
+    <UserContext.Provider value={{}}>
+
     {children}
-    </div>  
-    //   </UserContext.Provider>
+   
+    </UserContext.Provider>
     );
   }
