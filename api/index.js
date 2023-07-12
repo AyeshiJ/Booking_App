@@ -69,10 +69,10 @@ app.get('/profile', (req,res) => {
   mongoose.connect(process.env.MONGO_URL);
   const {token} = req.cookies;
   if (token) {
-    jwt.verify(token, jwtSecret, {}, async (err, user) => {
+    jwt.verify(token, jwtSecret, {}, async (err, userData) => {
       if (err) throw err;
       const {name,email,_id} = await User.findById(userData.id);
-      res.json({user});
+      res.json({userData});
     });
   } else {
     res.json(null);
