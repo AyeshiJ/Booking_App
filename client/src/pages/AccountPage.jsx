@@ -1,6 +1,7 @@
-import { useContext, useState } from "react"
-import { UserContext } from "../UserContext"
+import { useContext, useState } from "react";
+import { UserContext } from "../UserContext";
 import { Navigate, useParams } from "react-router-dom";
+import axios from "axios";
 
 export default function AccountPage() {
     const {redirect,setRedirect} = useState(null);
@@ -12,8 +13,8 @@ export default function AccountPage() {
 
     async function logout(){
         await axios.post('/logout');
-        setUser(null);
         setRedirect('/');
+        setUser(null);
     }
 
     if (!ready) {
@@ -24,9 +25,7 @@ export default function AccountPage() {
         return <Navigate to ={'/login'}/>
     }
 
-   
-  
-    function linkClases (type=null){
+    function linkClasses (type=null){
         let clases =  'py-2 px-6';
         if (type === subpage){
             clases += 'bg-primary text-white rounded-full';
@@ -41,10 +40,9 @@ export default function AccountPage() {
     return (
         <div>
             <nav className="w-full flex justify-center mt-8 gap-4 mb-8">
-                <Link className={linkClases('profile')} to={'/account'}>My profile</Link>
-                <Link className={linkClases('bookings')} to={'/account/bookings'}>My bookings</Link>
-                <Link className={linkClases('places')} to={'/account/places'}>My accommodations</Link>
-
+                <Link className={linkClasses('profile')} to={'/account'}>My profile</Link>
+                <Link className={linkClasses('bookings')} to={'/account/bookings'}>My bookings</Link>
+                <Link className={linkClasses('places')} to={'/account/places'}>My accommodations</Link>
             </nav>
             {subpage === 'profile' && (
                 <div className="text-center max-w-lg mx-auto">

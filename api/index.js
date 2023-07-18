@@ -77,7 +77,6 @@ app.get('/profile', (req,res) => {
   } else {
     res.json(null);
   }
-res.json({token});
 });
 
 app.post('/logout', (req,res) => {
