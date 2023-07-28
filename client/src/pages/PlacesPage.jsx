@@ -1,16 +1,17 @@
+import { useState } from "react";
 import { Form, Link, useParams } from "react-router-dom";
 
 export default function PlacesPage() {
   const { action } = useParams();
-  const [title,setTitle] = useState('');
-  const [address,setAddress] = useState('');
-  const [addedPhotos,setAddedPhotos] = useState([]);
-  const [description,setDescription] = useState('');
-  const [perks,setPerks] = useState([]);
-  const [extraInfo,setExtraInfo] = useState('');
-  const [checkIn,setCheckIn] = useState('');
-  const [checkOut,setCheckOut] = useState('');
-  const [maxGuests,setMaxGuests] = useState(1);
+  // const [address,setAddress] = useState('');
+  // const [addedPhotos,setAddedPhotos] = useState([]);
+  // const [photoLink,setPhotoLink] = useState('');
+  // const [description,setDescription] = useState('');
+  // const [perks,setPerks] = useState([]);
+  // const [extraInfo,setExtraInfo] = useState('');
+  // const [checkIn,setCheckIn] = useState('');
+  // const [checkOut,setCheckOut] = useState('');
+  // const [maxGuests,setMaxGuests] = useState(1);
   return (
     <div>
       {action !== "new" && (
